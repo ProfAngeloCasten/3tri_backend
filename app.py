@@ -6,9 +6,19 @@ app = Flask(__name__)
 def hello_world():
        return render_template('index.html')
        
-@app.route('/login')
+@app.route('/login', methods=['GET','POST'])
 def renderizar_login():
     return render_template('login.html')
+
+def login():
+       error = None
+       if request.method == 'POST':
+           username = request.form['username'],
+           password = request.form['password']
+           if username == 'admin' and password == 'password':
+               return 'Login successful!'
+           else:
+               return 'Credenciais inválidas. Tente novamente.'
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
