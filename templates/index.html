@@ -9,11 +9,28 @@
 
     <form>
         <p>Usuário</p>
-        <input type="text" placeholder="Digite seu usuário...">
+        <input type="text" id="usuario" placeholder="Digite seu usuário...">
         <p>Senha</p>
-        <input type="password" placeholder="Digite sua senha...">
+        <input type="password" id="senha" placeholder="Digite sua senha...">
         <button type="submit">Entrar</button>
     </form>
+
+    <script>
+        // login
+        const user = admin
+        const pwd = admin123
+
+        const userDigitado = document.getElementById('usuario').value()
+        const pwdDigitado = document.getElementById('senha').value()
+
+        if(user === userDigitado && pwd === pwdDigitado){
+            alert('Login realizado com sucesso!')
+        } else {
+            alert('Usuário ou senha incorretos!')
+        }
+
+        
+    </script>
 
 </body>
 </html>
